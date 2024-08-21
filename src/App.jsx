@@ -5,6 +5,8 @@ import "./App.css";
 import Header from "./components/header/Header";
 import Home from "./pages/Home";
 import Login from "./pages/login/Login";
+import ProtectedRoute from "./components/protectedRoute/protectedRoute";
+import Account from "./pages/account/Account";
 
 function App() {
   const [selectedBrand, setSelectedBrand] = useState("");
@@ -15,7 +17,7 @@ function App() {
     <Router>
       <Header sortBy={sortBy} setSortBy={setSortBy} />
       <Routes>
-        <Route path='login' element={<Login />} />
+        <Route path='/login' element={<Login />} />
         <Route
           path='/'
           element={
@@ -28,7 +30,9 @@ function App() {
             />
           }
         />
-
+        <Route element = { <ProtectedRoute/>} >
+           <Route path="/account" element = {<Account/>}/>
+        </Route>
         <Route path='/cart' element={<div>Cart</div>} />
       </Routes>
     </Router>

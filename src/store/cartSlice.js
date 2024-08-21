@@ -5,7 +5,7 @@ const CART = 'cart'
 
 const cartSlice = createSlice({
   name: CART,
-  initialState: getFromLocalStorage(CART),
+  initialState: getFromLocalStorage(CART)??[],
   reducers: {
     addItem: (state, action) => {
       state.push(action.payload);

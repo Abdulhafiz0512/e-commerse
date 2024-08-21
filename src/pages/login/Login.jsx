@@ -2,8 +2,9 @@ import { useState } from "react";
 
 import style from "./Login.module.scss";
 import { useDispatch } from "react-redux";
-import { addUser, setUserError } from "../../store/userSlice";
+
 import { useNavigate } from "react-router-dom";
+import { addUser, setUserError } from "../../store/userSlice";
 
 export default function Login() {
   const [userName, setUserName] = useState("");
